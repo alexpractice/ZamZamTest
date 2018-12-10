@@ -1,0 +1,12 @@
+package: ZamZamTest
+import:
+- package: github.com/ethereum/go-ethereum
+  version: "1.8.12"
+  subpackages:
+  - crypto/sha3
+- package: github.com/mediocregopher/radix.v2
+  subpackages:
+  - pool
+- package: golang.org/x/net
+  subpackages:
+  - websocket

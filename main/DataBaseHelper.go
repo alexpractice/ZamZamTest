@@ -8,8 +8,8 @@ import (
 var (
 	db     *pool.Pool
 	err    error
-	dbHost = config.DbConfig.Host
-	dbPort = config.DbConfig.Port
+	dbHost = config.DbConfig.Host //хост БД
+	dbPort = config.DbConfig.Port //порт БД
 )
 
 func init() {
@@ -20,6 +20,7 @@ func init() {
 	}
 }
 
+//функция сохранения значения value в List Redis'a по ключу key
 func saveToDataBase(key string, value string) {
 	dbClientConn, err := db.Get()
 	defer db.Put(dbClientConn)

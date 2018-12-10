@@ -10,6 +10,7 @@ type jsonScheme struct {
 	Hash   string
 }
 
+//функция создания json'ов согласно jsonScheme
 func buildJsonResponse(num string, hash string) string {
 	myScheme := &jsonScheme{
 		Number: num,

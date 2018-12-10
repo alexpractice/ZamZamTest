@@ -2,7 +2,8 @@ package main
 
 import "sync"
 
-func saving(src string, json string) {
+//функция сохранения полученного json'а в БД и канал
+func saving(json string) {
 	var wg sync.WaitGroup
 	wg.Add(2)
 	go func() {
@@ -16,6 +17,7 @@ func saving(src string, json string) {
 	wg.Wait()
 }
 
+//передача строчки в канал
 func saveToChannel(json string) {
 	channel <- json
 }

@@ -14,7 +14,7 @@ var (
 	config            = LoadConfiguration(configFilePath)
 	sourceValueString = os.Args[1]
 	repeatInt         int64
-	channel           chan string
+	channel           chan string //канал для передачи/получения сгенерированных json'ов
 	wsLock            = sync.Mutex{}
 )
 
@@ -33,7 +33,3 @@ func main() {
 		log.Fatal("ListenAndServe:", err)
 	}
 }
-
-
-
-

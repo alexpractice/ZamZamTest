@@ -5,7 +5,11 @@
     
 	Установка и настройка Redis
 	https://www.8host.com/blog/ustanovka-i-nastrojka-redis-v-ubuntu-16-04/
+	
+	Установка glide
+    https://glide.sh
 ##### 2. Сборка
+    glide install
  	cd main
 	go build
 ##### 3. Запуск

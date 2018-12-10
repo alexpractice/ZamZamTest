@@ -4,6 +4,7 @@ import (
 	"sync"
 )
 
+//основная функция сервера
 func computingAndSaving(in string) {
 	var commonMap = make(map[string]string)
 	var wg sync.WaitGroup
@@ -19,9 +20,10 @@ func computingAndSaving(in string) {
 	}
 }
 
+//функция, вызываемая для числа, переданного первым параметром
 func firstOperation(in string, inMap map[string]string) {
 	hash := genHash(in)
 	json := buildJsonResponse(in, hash)
 	inMap[getFourLastSymbols(in)] = hash
-	saving(sourceValueString, json)
+	saving(json)
 }

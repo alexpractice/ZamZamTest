@@ -7,8 +7,9 @@ import (
 	"time"
 )
 
+//функция для выдачи сообщений клиенту, подключившемуся по WebSocket
 func echo(ws *websocket.Conn) {
-	count := repeatInt + 1;
+	count := repeatInt + 1
 	resCount := int64(0)
 	wsLock.Lock()
 	defer wsLock.Unlock()
@@ -21,6 +22,7 @@ func echo(ws *websocket.Conn) {
 		resCount++
 		if count == resCount {
 			ws.Close()
+			close(channel)
 			break
 		}
 		time.Sleep(3 * time.Second)
