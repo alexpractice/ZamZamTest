@@ -1,4 +1,4 @@
-
+Постановка задачи в task.png
 ##### 1.Настройка окружения
 	Установка Go 
 	http://golang.org/doc/install
